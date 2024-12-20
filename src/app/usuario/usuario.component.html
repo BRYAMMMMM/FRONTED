@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="background">
+      <div class="blue-card"></div>
+      <div class="red-card"></div>
+    </div>
+    <div class="form-container">
+      <label class="form-title">Registro de Usuario</label>
+      <form (ngSubmit)="createUsuario()" class="form">
+        <div class="input-group">
+          <input
+            type="text"
+            [(ngModel)]="nombre"
+            name="nombre"
+            placeholder="Nombre"
+            required
+            class="input"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            [(ngModel)]="apellido"
+            name="apellido"
+            placeholder="Apellido"
+            required
+            class="input"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            [(ngModel)]="direccion"
+            name="direccion"
+            placeholder="Dirección"
+            required
+            class="input"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            class="input-file"
+          />
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn-submit">Crear Usuario</button>
+        </div>
+      </form>
+      <hr class="separator" />
+      <label class="form-title">Descargar Archivo</label>
+      <div class="download-section">
+        <input
+          #userIdInput
+          type="number"
+          placeholder="ID del Usuario"
+          class="input"
+        />
+        <button
+          (click)="downloadFile(userIdInput.value)"
+          class="btn-download"
+        >
+          Descargar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
